@@ -19,7 +19,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterUserServiceServer(grpcServer, services.NewUserService())
 	reflection.Register(grpcServer)
-	
+
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Could not serve: %v", err)
 	}
